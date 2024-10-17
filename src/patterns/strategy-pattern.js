@@ -38,19 +38,20 @@ const observerInfoFirstStrategy = {
 };
 
 /** @type {NotificationContext} */
-const notificationContext = (() => {
+const notificationContext = (({ strategies }) => {
   /** @type {ObserverInfoStrategy} */
   let notificationStrategy;
   return {
     getInfo: ({ context, observers }) => {
-      const strategies = {
-        all: observerInfoAllStrategy,
-        first: observerInfoFirstStrategy,
-      };
       notificationStrategy = strategies[context];
       return notificationStrategy.info(observers);
     },
   };
-})();
+})({
+  strategies: {
+    all: observerInfoAllStrategy,
+    first: observerInfoFirstStrategy,
+  },
+});
 
 module.exports = notificationContext;
