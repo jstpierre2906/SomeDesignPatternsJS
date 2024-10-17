@@ -1,4 +1,5 @@
 const graceUnderPressureModule = require("./patterns/module-pattern.js");
+const graceUnderPressureModuleUpperCaseDecorator = require("./patterns/decorator-pattern.js");
 const notificationContext = require("./patterns/strategy-pattern.js");
 const trackObservers = require("./patterns/observer-pattern.js");
 
@@ -10,7 +11,7 @@ graceUnderPressureModule.init({
 graceUnderPressureModule.addTrack("Red Sector A");
 graceUnderPressureModule.addTrack("Distant Early Warning");
 graceUnderPressureModule.addTrack("Afterimage");
-graceUnderPressureModule.addTrack("Kid Gloves");
+graceUnderPressureModuleUpperCaseDecorator.addTrack("Kid Gloves");
 
 console.log(graceUnderPressureModule.getTracks());
 console.log(
